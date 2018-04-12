@@ -1,6 +1,6 @@
 {
-  "name": "@tencent/RadarView",
-  "version": "0.0.5",
+  "name": "@tencent/radar-view",
+  "version": "0.0.6",
   "description": "",
   "main": "main.js",
   "scripts": {

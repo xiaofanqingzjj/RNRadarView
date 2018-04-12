@@ -7,7 +7,7 @@
 # installation
 
 ```bash
-tnpm install @tencent/RadarView --save
+tnpm install @tencent/radar-view --save
 ```
 
 # Sample
