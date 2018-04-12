@@ -5,7 +5,7 @@
 import React, {Component, PropTypes} from "react";
 import RadarView from "./RadarView";
 import {px, scale} from "./ViewUtil";
-import {ART} from "react-native";
+import {ART, View, StyleSheet} from "react-native";
 
 
 export default class TestRadar extends React.Component {
@@ -37,55 +37,72 @@ export default class TestRadar extends React.Component {
 
 
         // 所有的参数都是可选
-        return <RadarView
-            size={200}
-            radarData={data}
-            drawTitle={true}
-            drawSubTitle={true}
-            radarStyle={{
-                radarPadding: 40,
-                titlePadding: scale(16),
+        return (<View style={styles.container}>
 
-                borderWidth: px(1),
-                borderColor: '#999999',
-                borderFillColor: '#ffffff',
+            <RadarView
+                size={180}
+                radarData={data}
+            />
 
-                spiderColor: '#dddddd',
-                spiderLineCount: 3,
-                spiderWidth: px(1),
-                drawVSpiderLine: false,
 
-                radarBorderColor: '#ff0000',
-                radarFillColor: '#ff0000aa',
-                radarBorderWidth: 1,
+            <RadarView
+                size={180}
+                radarData={data}
+                drawTitle={true}
+                drawSubTitle={true}
+                radarStyle={{
+                    radarPadding: 40,
+                    titlePadding: scale(16),
 
-                compareRadarBorderColor: '#cccccc',
-                compareRadarFillColor: '#cccccccc',
-                compareRadarBorderWidth: 1,
+                    borderWidth: px(1),
+                    borderColor: '#999999',
+                    borderFillColor: '#ffffff',
 
-                titleSize: 10,
-                titleColor: '#333333',
-                subTitleSize: 8,
-                subTitleColor: '#999999',
+                    spiderColor: '#dddddd',
+                    spiderLineCount: 3,
+                    spiderWidth: px(1),
+                    drawVSpiderLine: true,
 
-            }}/>
+                    radarBorderColor: '#ff0000',
+                    radarFillColor: '#ff0000aa',
+                    radarBorderWidth: 1,
+
+                    compareRadarBorderColor: '#cccccc',
+                    compareRadarFillColor: '#cccccccc',
+                    compareRadarBorderWidth: 1,
+
+                    titleSize: 10,
+                    titleColor: '#333333',
+                    subTitleSize: 8,
+                    subTitleColor: '#999999',
+
+                }}/>
+        </View>);
     }
 
     _renderTitle = (x, y, index) => {
         let font = "normal " + scale(12) + "px Helvetica";
         y = y - scale(12) / 2;
         return <ART.Group>
-        <ART.Text
-            key={index}
-            strokeWidth={1}
-            fill={'#ff0000'}
-            font={font}
-            alignment="center"
-            fontWeight="normal"
-            x={x}
-            y={y}>
-            sss
-        </ART.Text>
+            <ART.Text
+                key={index}
+                strokeWidth={1}
+                fill={'#ff0000'}
+                font={font}
+                alignment="center"
+                fontWeight="normal"
+                x={x}
+                y={y}>
+                sss
+            </ART.Text>
         </ART.Group>
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        flex: 1,
+        justifyContent: 'center',
+    }
+})

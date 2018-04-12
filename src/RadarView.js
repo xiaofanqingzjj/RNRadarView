@@ -43,7 +43,7 @@
 
 
 import React, {Component, PropTypes} from "react";
-import {ART, PixelRatio, View, Dimensions} from "react-native";
+import {ART, Dimensions, PixelRatio, View} from "react-native";
 
 const {width, height} = Dimensions.get('window');
 const scale = size => width / 375 * size;
@@ -132,6 +132,18 @@ export default class RadarView extends Component {
         }
     };
 
+
+    _checkRadarStyle(){
+        const radarStyle = this.props.radarStyle;
+        const ds = this.constructor.defaultProps.radarStyle;
+        const keys = Object.keys(ds);
+        keys.map((item)=> {
+            if (!radarStyle[item]) {
+                radarStyle[item] = ds[item];
+            }
+        })
+    }
+
     constructor(props) {
         super(props);
 
@@ -139,7 +151,11 @@ export default class RadarView extends Component {
             radarData: this.props.radarData,
         }
 
+        this._checkRadarStyle();
+
         const radarStyle = props.radarStyle;
+
+        console.log('radarStyle',  JSON.stringify(radarStyle));
 
         // 雷达图顶点和边界的距离
         this.radarPadding = radarStyle.radarPadding;
@@ -168,10 +184,8 @@ export default class RadarView extends Component {
         // 标题和小标题
         this.radarTitles = [];
         this.radarSubTitles = [];
-
         this._prepareRender();
     }
-
 
     /**
      * 注意里面用到的角度的单位都是弧度
