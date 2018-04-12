@@ -10,6 +10,10 @@
 tnpm install @tencent/radar-view --save
 ```
 
+# Screenshot
+
+![image](https://github.com/xiaofanqingzjj/RNRadarView/blob/master/img/screenshot.png)
+
 # Sample
 
 
