@@ -54,15 +54,15 @@ export default class TestRadar extends React.Component {
             // renderTitle={this._renderTitle}
             radarStyle={{
                 radarPadding: 40,
-                titlePadding: scale(16),
+                titlePadding: 16,
 
-                borderWidth: px(1),
+                borderWidth: 1,
                 borderColor: '#999999',
                 borderFillColor: '#ffffff',
 
                 spiderColor: '#dddddd',
                 spiderLineCount: 3,
-                spiderWidth: px(1),
+                spiderWidth: 1,
                 drawVSpiderLine: false,
 
                 radarBorderColor: '#ff0000',
