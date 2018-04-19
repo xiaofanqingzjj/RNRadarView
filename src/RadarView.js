@@ -132,16 +132,12 @@ export default class RadarView extends Component {
         }
     };
 
-
     _checkRadarStyle(){
         const radarStyle = this.props.radarStyle;
         const ds = this.constructor.defaultProps.radarStyle;
-        const keys = Object.keys(ds);
-        keys.map((item)=> {
-            if (!radarStyle[item]) {
-                radarStyle[item] = ds[item];
-            }
-        })
+        for (let k in ds) {
+            if (!radarStyle[k]) radarStyle[k] = ds[k];
+        }
     }
 
     constructor(props) {

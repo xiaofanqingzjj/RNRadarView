@@ -54,6 +54,27 @@ export default class TestRadar extends React.Component {
                     radarPadding: 40,
                     titlePadding: scale(16),
 
+
+                    radarBorderColor: '#ff0000',
+                    radarFillColor: '#ff0000aa',
+                    radarBorderWidth: 1,
+
+                    compareRadarBorderColor: '#cccccc',
+                    compareRadarFillColor: '#cccccccc',
+                    compareRadarBorderWidth: 1,
+
+
+                }}/>
+
+            <RadarView
+                size={180}
+                radarData={data}
+                drawTitle={true}
+                drawSubTitle={true}
+                radarStyle={{
+                    radarPadding: 40,
+                    titlePadding: scale(16),
+
                     borderWidth: px(1),
                     borderColor: '#999999',
                     borderFillColor: '#ffffff',
